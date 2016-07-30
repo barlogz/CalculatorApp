@@ -1,4 +1,4 @@
-package app;
+package ua.goit.java.calculator.app;
 
 import ua.goit.java.calculator.lib.UnaryOperation;
 

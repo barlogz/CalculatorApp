@@ -1,5 +1,7 @@
-package app;
+package ua.goit.java.calculator.app;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.goit.java.calculator.lib.Calculator;
 
 import java.util.Scanner;
@@ -11,17 +13,19 @@ public class Main {
 
     private Calculator calculator;
 
-    public void setCalculator(Calculator calculator) {
+    void setCalculator(Calculator calculator) {
         this.calculator = calculator;
     }
 
     public static void main(String[] args) {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
+        Main mainClass = applicationContext.getBean("main", Main.class);
 
-
+        mainClass.execute();
     }
 
 
-    public void execute() {
+    private void execute() {
         calculator.addNewBinaryOperation(new OperationDivide());
         calculator.addNewBinaryOperation(new OperationMultiple());
         calculator.addNewUnaryOperation(new OperationFactorial());

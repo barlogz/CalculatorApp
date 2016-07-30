@@ -1,4 +1,4 @@
-package app;
+package ua.goit.java.calculator.app;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
